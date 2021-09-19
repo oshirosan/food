@@ -1,0 +1,39 @@
+
+@mixin border(){
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%; /* 位置調整 */
+    transform: translate(-50%); /* 位置調整 */
+    bottom: -10px; /* 下線の上下位置調整 */
+    width: 35px; /* 下線の幅 */
+    height: 4px; /* 下線の太さ */
+    background-color: #ffffff; /* 下線の色 */
+}
+
+@mixin style() {
+    font-size: $large;
+    font-family: lobster;
+    text-align: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+@mixin line () {
+    background-color: #fff;
+    content: "";
+    display: block;
+    height: 15px;
+    position: absolute;
+    right: 0.5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+}
+@mixin center () {
+    font-family: lobster;
+    font-size: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

@@ -1,0 +1,426 @@
+@import "_mixins";
+
+
+
+$main-color: #6fcfcf;
+$bg-color: #edbece;
+$accent-color: #ece6d9;
+$normal: 16px;
+$large: 25px;
+
+
+// スライドショー
+.slide-show {
+    overflow: hidden;
+}
+.slide-show img {
+    width: 100%;
+}
+
+// フェードイン
+.fadein {
+    opacity: 0;
+    transform : translate(0, 50px);
+    transition : all 1500ms;
+}
+.scrollin{
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+// ----------------------------------
+// 全体構造
+// ----------------------------------
+body {
+    background-color: #ffffff;
+    color:#000000;
+    font-size: $normal;
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+}
+li {
+    list-style-type: none;
+}
+a {
+    color: #000000;
+}
+.back-top {
+    position: fixed;
+    bottom: 3%;
+    right: 5%;
+    display: none;
+    font-size: 40px;
+   }
+// ----------------------------------
+// ヘッダー
+// ----------------------------------
+header {
+    background-color: #ffffff;
+    opacity: 0.9;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 35px;
+    z-index: 1;
+    .inner {
+        width: 1050px;
+        height: 35px;
+        margin: 0 auto;
+    }
+    ul {
+        display: flex;
+        justify-content: space-around;
+    }
+    li {
+        font-family: 'lobster';
+    }
+    a {
+        text-decoration: none;
+        line-height: 35px;
+        color: #000000;
+    }
+    a:hover {
+        opacity: 0.5;
+        transition: 1s;
+    }
+}
+
+// ----------------------------------
+// メイン
+// ----------------------------------
+.main-image {
+position: relative;
+}
+.main-image .slide-show img{
+    width: 100%;
+}
+h1 {
+    color: #ffffff;
+    font-family: 'lobster';
+    font-size: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+}
+
+// ----------------------------------
+// アバウト
+// ----------------------------------
+.about {
+    background-color: $main-color;
+    padding: 75px 0;
+    div {
+        margin: 0 250px;
+    }
+    h2 {
+        font-size: $large;
+        font-family: 'lobster';
+        text-align: center;
+        position: relative;
+        margin-bottom: 50px;
+    }
+    h2:after{
+        @include border
+      }
+      p {
+          margin-bottom: 30px;
+          line-height: 1.5;
+          font-weight: bold;
+          font-family: 'noto serif jp';  
+      }
+      
+}
+
+// ----------------------------------
+// ショップインフォ
+// ----------------------------------
+.shop-info {
+    background-image: url(../images/bg-color-beige.png);
+    padding: 75px 0;
+    .content {
+        // margin: 0 157px;
+        width: 960px;
+        margin: 0 auto;
+    }
+    h2 {
+        @include style
+    }
+    h2::after {
+        @include border
+    }
+    h3 {
+        font-size: 27px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-family: 'noto serif jp';
+    }
+}
+.explain {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    figure {
+        display: table;
+        width: 100px;
+    }
+    figcaption {
+        width: 100%;
+        margin-top: 20px;
+        line-height: 1.5;
+        font-weight: bold;
+        font-family: 'noto serif jp';
+    }
+    .bread {
+        margin-bottom: 30px;
+    }
+}
+
+// ----------------------------------
+// サブ
+// ----------------------------------
+.sub {
+    background-color: $main-color;
+    padding: 60px 0;
+    .logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 400px;
+        margin: 0 auto;
+    }
+    .logo-image {
+        padding-left: 60px;
+    }
+    p {
+        font-family: 'lobster';
+        font-size: $large;
+        font-weight: bold;
+    }
+    .logo a {
+        text-decoration: none;
+        color: #000000;
+    }
+    .logo a:hover {
+        opacity: 0.5;
+        transition: 0.6s;
+    }
+}
+
+// ロゴエフェクト
+.fuwafuwa {
+    animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
+    transition: 1.5s ease-in-out;
+  }
+   
+  @keyframes fuwafuwa {
+    0% {
+      transform:translate(0, 0) rotate(-7deg);
+    }
+    50% {
+      transform:translate(0, -7px) rotate(0deg);
+    }
+    100% {
+      transform:translate(0, 0) rotate(7deg);
+    }
+  }
+
+// ----------------------------------
+// フッター
+// ----------------------------------
+footer {
+    background-color: #333333; 
+    .list {
+        padding: 20px 0;
+        margin: 0 300px;
+    }
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .icon li {
+        font-size: 35px;
+        margin: 0 10px;
+    }
+    .icon li a {
+        color: #ffffff;
+    }
+    .icon li a:hover {
+        opacity: 0.5;
+        transition: 0.6s;
+    }
+    .language {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+    .language li {
+        padding: 10px;
+    }
+    .language .ja {
+        position: relative;
+    }
+    .language .ja::after {
+        background-color: #fff;
+        content: "";
+        display: block;
+        height: 15px;
+        position: absolute;
+        right: 0.5px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+    }
+    .language .en {
+        position: relative;
+    }
+    .language .en::after {
+        @include line
+    }
+    .language .kor {
+        position: relative;
+    }
+    .language .kor::after {
+        @include line
+    }
+    .language .chi {
+        position: relative;
+    }
+    .language .chi::after {
+        @include line
+    }
+    p {
+        text-align: center;
+        line-height: 1.5;
+        color: #ffffff;
+    }    
+}
+
+// ----------------------------------
+// メニューページ
+// ----------------------------------
+.menu-image {
+    position: relative;
+    h1 {
+        @include center
+    }
+}
+.menu-image img {
+    width: 100%;
+}
+
+.menu-list {
+    background-image: url(../images/bg-color-pink.png);
+    padding: 65px 0;
+    h2 {
+        @include style
+    }
+    h2::after {
+        @include border
+    }
+    .wapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 960px;
+        margin: 0 auto;        
+    }
+    .wapper .item {
+        background-color: #ffffff;
+        margin-bottom: 40px;
+    }
+    .wapper .item:nth-child(7),
+    .wapper .item:nth-child(8),
+    .wapper .item:nth-child(9) {
+        margin-bottom: 0;
+    }
+    .wapper div a {
+        text-decoration: none;
+    }
+    div p {
+       font-size: 20px; 
+       text-align: center;
+       font-weight: bold;
+       margin-top: 10px;
+       font-family: 'noto serif jp';
+    }
+    .price {
+        font-size: $large;
+        font-family: 'STIX Two Text';
+        margin-bottom: 10px;
+    }
+    
+}
+
+// メニューエフェクト
+.btn_design {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: 0 0 7px 0 
+      rgba(0, 0, 0, 0.5);
+    transition: 0.2s;
+}
+.btn_design:hover{
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
+    transform: translateY(-9px);
+    cursor: pointer;
+  }
+
+// ----------------------------------
+// キャンペーン
+// ----------------------------------
+.campaign-list {
+    background-color: $accent-color;
+    padding: 65px 0;
+    .coupon {
+        width: 960px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    h2 {
+        @include style
+    }
+    h2::after {
+        @include border
+    }
+    .coupon .banner {
+        margin-bottom: 50px;
+    }
+    .coupon .banner:nth-child(3),
+    .coupon .banner:nth-child(4) {
+        margin-bottom: 0;
+    }
+    .banner img {
+        border-radius: 15px;
+        margin-bottom: 15px;
+    }
+    .banner p {
+        font-size: $large;
+        font-weight: bold;
+        font-family: 'STIX Two Text';
+    }
+}
+
+// キャンペーンエフェクト
+.poyopoyo {
+    animation: poyopoyo 2s ease-out infinite;
+    opacity: 1;
+  }
+  @keyframes poyopoyo {
+    0%, 40%, 60%, 80% {
+      transform: scale(1.0);
+    }
+    50%, 70% {
+      transform: scale(0.95);
+    }
+  }
+

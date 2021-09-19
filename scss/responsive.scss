@@ -1,0 +1,162 @@
+@import '_mixins';
+
+
+@media(max-width:500px){
+
+
+// ------------------------
+// 全体構造
+// ------------------------
+.page {
+    margin: 0;
+}
+
+// ------------------------
+// ヘッダー
+// ------------------------
+header {
+    width: auto;
+    z-index: 1;
+    .inner {
+        width: auto;
+        margin: 0 auto;
+    }
+    ul {
+        display: flex;
+        width: auto;
+    }
+    li {
+        font-size: 14px;
+    }
+}
+
+// ----------------------------------
+// メイン
+// ----------------------------------
+.main-image h1 {
+    font-size: 35px;
+    }
+    .main-image .slide-show img{
+        width: 100%;
+    }
+
+// ----------------------------------
+// アバウト
+// ----------------------------------
+    .about div {
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+// ----------------------------------
+// ショップインフォ
+// ----------------------------------
+.shop-info .content { 
+    width: auto;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+    .explain figure {
+        width: auto;
+        margin: 0 auto;
+        img {
+            width: 100%;
+            margin: 0 auto;
+        }
+        figcaption {
+            margin-top: 8px;
+        }
+    }
+    .explain .tomato {
+        margin-bottom: 30px;
+    }
+
+// ----------------------------------
+// サブ
+// ----------------------------------
+.sub {
+    width: 100%;
+    .logo {
+        width: auto;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .logo-image img {
+        width: 70px;
+        height: 70px;
+        margin-right: 25px;
+    }
+    p {
+        font-size: 25px;
+    }
+}
+// ----------------------------------
+// フッター
+// ----------------------------------
+footer {
+    width: 100%;
+    .list {
+        width: auto;
+        margin: 0 auto;
+        padding: 0 5px 5px 5px;
+    }
+    .language {
+        width: 100%;
+    }
+    .language li {
+        font-size: 15px;
+        width: auto;
+    }
+    p {
+        width: 100%;
+    }
+
+}
+i {
+    font-size: 30px;
+}
+
+}
+
+
+
+// ----------------------------------
+// サブ
+// ----------------------------------
+@media(max-width:330px) {
+    .sub {
+        width: 100%;
+        .logo-image img {
+            width: 65px;
+            height: 65px;
+            margin-right: 22px;
+        }
+        p {
+            font-size: 20px;
+        }
+    }
+
+// ----------------------------------
+// フッター
+// ----------------------------------
+    footer {
+        width: 100%;
+        .list {
+            width: auto;
+            margin: 0 auto;
+        }
+        .language {
+            width: 100%;
+        }
+        .language li {
+            font-size: 11px;
+            width: auto;
+        }
+        p {
+            font-size: 13px;
+        }
+    }
+    
+}
